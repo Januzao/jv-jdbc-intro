@@ -1,5 +1,5 @@
-create table books (
-    id bigint not null primary key auto_increment,
-    title varchar(255),
-    price decimal
+CREATE TABLE books (
+    id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255),
+    price DECIMAL
 );
