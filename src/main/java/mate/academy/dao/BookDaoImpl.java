@@ -26,7 +26,7 @@ public class BookDaoImpl implements BookDao {
             preparedStatement.setBigDecimal(2, book.getPrice());
             int effectedRows = preparedStatement.executeUpdate();
             if (effectedRows < 1) {
-                throw new RuntimeException(
+                throw new DataProcessingException(
                         "Expected to insert at least one row, but inserted 0 rows");
             }
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
@@ -83,7 +83,7 @@ public class BookDaoImpl implements BookDao {
             preparedStatement.setLong(3, book.getId());
             int effectedRows = preparedStatement.executeUpdate();
             if (effectedRows < 1) {
-                throw new RuntimeException(
+                throw new DataProcessingException(
                         "Failed to update book. Book with id " + book.getId() + " not found.");
             }
             return book;
